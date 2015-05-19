@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - 2_1_db_stalizans_am_uzskaite@localhost" uuid="a169f339-37d2-454b-bc64-9fb5e39a0050">
+    <database-info product="MySQL" version="5.6.23-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="2_1_db_stalizans_am_uzskaite"/>
+    <table name="apkalpojamas_firmas" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="F_KODS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Firma" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Adrese" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <exported-key name="FK_E_PASTU__E_PASTU_P_FIRMAS" table="e_pastu_piederiba" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="F_KODS"/>
+      <exported-key name="FK_FIR_AP_FIR_AP2_FIRMAS" table="firmas_aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="F_KODS"/>
+      <exported-key name="FK_FIRMA_DA_FIRMA_DAT_FIRMAS" table="firmas_datori" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="F_KODS"/>
+      <exported-key name="FK_FIRMU_PR_FIRMU_PRO_FIRMAS" table="firmas_pied_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="F_KODS"/>
+      <exported-key name="FK_FIRMU_SI_FIRMU_SIS_FIRMAS" table="firmu_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="F_KODS"/>
+      <exported-key name="FK_STRADNIE_FIRMU_STR_FIRMAS" table="stradnieki" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="F_KODS"/>
+      <index name="PK_FIRMAS" unique="true" columns="F_KODS"/>
+    </table>
+    <table name="automasinas" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="MasinasID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Firma" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Marka" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Cena" sqlType="FLOAT" precision="12" scale="0" nullable="true" jdbcType="7"/>
+      <column name="Iep_Dat" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="numurzime" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="biroju_ekas" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="BirojaID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Valsts" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Pilseta" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Adrese" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="dab_auto" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="MasinasID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Dab_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="datori" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="PC_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="OSKods" sqlType="CHAR" precision="15" scale="0" nullable="true" jdbcType="1"/>
+      <column name="Dab_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="PC_vards" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CPU" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="RAM" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="HDD" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Mates_plate" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Video_Karte" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Optiska_ierice" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="IP" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Atrasanas_Vieta" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Norakstits_status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <foreign-key name="FK_DATORI_DAT_SYS_OPERETAJ" columns="OSKods" ref-table="operetaj_sistemas" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="OSKods" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_DATORI_STRADNIEK_STRADNIE" columns="Dab_ID" ref-table="stradnieki" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="Dab_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_DAT_PROG_DAT_PROG_DATORI" table="datoru_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="PC_ID"/>
+      <exported-key name="FK_FIRMA_DA_FIRMA_DAT_DATORI" table="firmas_datori" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="PC_ID"/>
+      <index name="PK_DATORI" unique="true" columns="PC_ID"/>
+      <index name="FK_DATORI_DAT_SYS_OPERETAJ" unique="false" columns="OSKods"/>
+      <index name="FK_DATORI_STRADNIEK_STRADNIE" unique="false" columns="Dab_ID"/>
+    </table>
+    <table name="datoru_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="PC_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Prog_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="FK_DAT_PROG_DAT_PROG2_PROGRAMM" columns="Prog_ID" ref-table="programmatura" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="Prog_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_DAT_PROG_DAT_PROG_DATORI" columns="PC_ID" ref-table="datori" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="PC_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PK_DAT_PROG" unique="true" columns="PC_ID,Prog_ID"/>
+      <index name="FK_DAT_PROG_DAT_PROG2_PROGRAMM" unique="false" columns="Prog_ID"/>
+    </table>
+    <table name="e_pastu_piederiba" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="F_KODS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Dab_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="E_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="FK_E_PASTU__E_PASTU_P_E_PASTS" columns="E_ID" ref-table="epasti" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="E_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_E_PASTU__E_PASTU_P_FIRMAS" columns="F_KODS" ref-table="apkalpojamas_firmas" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="F_KODS" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_E_PASTU__E_PASTU_P_STRADNIE" columns="Dab_ID" ref-table="stradnieki" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="Dab_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PK_E_PASTU_PIEDERIBA" unique="true" columns="F_KODS,Dab_ID,E_ID"/>
+      <index name="FK_E_PASTU__E_PASTU_P_E_PASTS" unique="false" columns="E_ID"/>
+      <index name="FK_E_PASTU__E_PASTU_P_STRADNIE" unique="false" columns="Dab_ID"/>
+    </table>
+    <table name="epasti" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="E_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Epasts" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="Parole" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <exported-key name="FK_E_PASTU__E_PASTU_P_E_PASTS" table="e_pastu_piederiba" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="E_ID"/>
+      <index name="PK_E_PASTS" unique="true" columns="E_ID"/>
+    </table>
+    <table name="firmas_aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="F_KODS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="AP_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Pavadzimes_nr" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Iepirksanas_dat" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="Cena" sqlType="DECIMAL" precision="19" scale="4" nullable="true" jdbcType="3"/>
+      <foreign-key name="FK_FIR_AP_FIR_AP2_FIRMAS" columns="F_KODS" ref-table="apkalpojamas_firmas" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="F_KODS" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="Firmu Aparatura NoliktavaFirmas Aparatura" columns="AP_ID" ref-table="firmu_aparatura_noliktava" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="AP_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="Izmantota AparaturaFirmas Aparatura" columns="AP_ID" ref-table="izmantota aparatura" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="AP_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PK_FIR_AP" unique="true" columns="F_KODS,AP_ID"/>
+      <index name="Izmantota AparaturaFirmas Aparatura" unique="false" columns="AP_ID"/>
+    </table>
+    <table name="firmas_datori" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="F_KODS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PC_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Pavadzimes_nr" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Iepirksanas_dat" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="Cena" sqlType="DECIMAL" precision="19" scale="4" nullable="true" jdbcType="3"/>
+      <foreign-key name="FK_FIRMA_DA_FIRMA_DAT_DATORI" columns="PC_ID" ref-table="datori" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="PC_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_FIRMA_DA_FIRMA_DAT_FIRMAS" columns="F_KODS" ref-table="apkalpojamas_firmas" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="F_KODS" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PK_FIRMA_DAT" unique="true" columns="F_KODS,PC_ID"/>
+      <index name="FK_FIRMA_DA_FIRMA_DAT_DATORI" unique="false" columns="PC_ID"/>
+    </table>
+    <table name="firmas_pied_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="F_KODS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Prog_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Pavadzimes_nr" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Iepirksanas_dat" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="Licenzu_skaits" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Licenzes_cena" sqlType="DECIMAL" precision="19" scale="4" nullable="true" jdbcType="3"/>
+      <foreign-key name="FK_FIRMU_PR_FIRMU_PRO_FIRMAS" columns="F_KODS" ref-table="apkalpojamas_firmas" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="F_KODS" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_FIRMU_PR_FIRMU_PRO_PROGRAMM" columns="Prog_ID" ref-table="programmatura" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="Prog_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PK_FIRMU_PROGRAMMATURA" unique="true" columns="F_KODS,Prog_ID"/>
+      <index name="FK_FIRMU_PR_FIRMU_PRO_PROGRAMM" unique="false" columns="Prog_ID"/>
+    </table>
+    <table name="firmu_aparatura_noliktava" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="AP_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Ierices_firma" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Modelis" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="IP" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Tips" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="1Stavs" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="2Stavs" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="Norakstits_status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <exported-key name="Firmu Aparatura NoliktavaFirmas Aparatura" table="firmas_aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="AP_ID"/>
+      <exported-key name="Firmu Aparatura NoliktavaStradnieka Aparatura" table="stradnieka_aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="AP_ID"/>
+      <index name="PK_APARATURA_NOLIKTAVA" unique="true" columns="AP_ID"/>
+    </table>
+    <table name="firmu_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="F_KODS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="OSKods" sqlType="CHAR" precision="15" scale="0" nullable="true" jdbcType="1"/>
+      <column name="Iepirksanas_dat" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="Licencu_Skaits" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="Cena" sqlType="DECIMAL" precision="19" scale="4" nullable="true" jdbcType="3"/>
+      <column name="Pavadzimes Nr" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="FK_FIRMU_SI_FIRMU_SIS_FIRMAS" columns="F_KODS" ref-table="apkalpojamas_firmas" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="F_KODS" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_FIRMU_SI_FIRMU_SIS_OPERETAJ" columns="OSKods" ref-table="operetaj_sistemas" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="OSKods" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PK_FIRMU_SISTEMAS" unique="true" columns="F_KODS,OSKods"/>
+      <index name="FK_FIRMU_SI_FIRMU_SIS_OPERETAJ" unique="false" columns="OSKods"/>
+    </table>
+    <table name="izmantota aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="AP_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Ierices_firma" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Modelis" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="IP" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Tips" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Tiek_lietots" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="Atrasanas_Vieta" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <exported-key name="Izmantota AparaturaFirmas Aparatura" table="firmas_aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="AP_ID"/>
+      <exported-key name="Izmantota AparaturaStradnieka Aparatura" table="stradnieka_aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="AP_ID"/>
+      <index name="PK_IZMANTOTA_APARATURA" unique="true" columns="AP_ID"/>
+    </table>
+    <table name="lieotaji" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="L_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Lietotajs" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Parole" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <exported-key name="FK_STRADNIE_DARB_LIET_LIEOTAJI" table="stradnieki" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="L_ID"/>
+      <index name="PK_LIEOTAJI" unique="true" columns="L_ID"/>
+    </table>
+    <table name="operetaj_sistemas" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="OSKods" sqlType="CHAR" precision="15" scale="0" nullable="true" jdbcType="1"/>
+      <column name="Sistema" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Versija" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <exported-key name="FK_DATORI_DAT_SYS_OPERETAJ" table="datori" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="OSKods"/>
+      <exported-key name="FK_FIRMU_SI_FIRMU_SIS_OPERETAJ" table="firmu_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="OSKods"/>
+      <index name="PK_OPERETAJ_SISTEMAS" unique="true" columns="OSKods"/>
+    </table>
+    <table name="programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="Prog_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Nosaukums" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Versija" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <exported-key name="FK_DAT_PROG_DAT_PROG2_PROGRAMM" table="datoru_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="Prog_ID"/>
+      <exported-key name="FK_FIRMU_PR_FIRMU_PRO_PROGRAMM" table="firmas_pied_programmatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="Prog_ID"/>
+      <index name="PK_PROGRAMMATURA" unique="true" columns="Prog_ID"/>
+    </table>
+    <table name="stradnieka_aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="AP_ID" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Dab_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="FK_STRAD_AP_STRAD_AP2_STRADNIE" columns="Dab_ID" ref-table="stradnieki" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="Dab_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="Firmu Aparatura NoliktavaStradnieka Aparatura" columns="AP_ID" ref-table="firmu_aparatura_noliktava" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="AP_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="Izmantota AparaturaStradnieka Aparatura" columns="AP_ID" ref-table="izmantota aparatura" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="AP_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PK_STRAD_AP" unique="true" columns="AP_ID,Dab_ID"/>
+      <index name="FK_STRAD_AP_STRAD_AP2_STRADNIE" unique="false" columns="Dab_ID"/>
+    </table>
+    <table name="stradnieki" schema="" catalog="2_1_db_stalizans_am_uzskaite" type="TABLE">
+      <column name="Dab_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="F_KODS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Str_Dab_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="L_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="vards" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="uzvards" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="pk" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="Amats" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="Telefons" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="FK_STRADNIE_DARB_LIET_LIEOTAJI" columns="L_ID" ref-table="lieotaji" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="L_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_STRADNIE_FIRMU_STR_FIRMAS" columns="F_KODS" ref-table="apkalpojamas_firmas" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="F_KODS" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_STRADNIE_PRIEKSNIE_STRADNIE" columns="Str_Dab_ID" ref-table="stradnieki" ref-schema="" ref-catalog="2_1_db_stalizans_am_uzskaite" ref-columns="Dab_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_DATORI_STRADNIEK_STRADNIE" table="datori" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="Dab_ID"/>
+      <exported-key name="FK_E_PASTU__E_PASTU_P_STRADNIE" table="e_pastu_piederiba" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="Dab_ID"/>
+      <exported-key name="FK_STRAD_AP_STRAD_AP2_STRADNIE" table="stradnieka_aparatura" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="Dab_ID"/>
+      <exported-key name="FK_STRADNIE_PRIEKSNIE_STRADNIE" table="stradnieki" schema="" catalog="2_1_db_stalizans_am_uzskaite" columns="Str_Dab_ID"/>
+      <index name="PK_STRADNIEKI" unique="true" columns="Dab_ID"/>
+      <index name="FK_STRADNIE_DARB_LIET_LIEOTAJI" unique="false" columns="L_ID"/>
+      <index name="FK_STRADNIE_FIRMU_STR_FIRMAS" unique="false" columns="F_KODS"/>
+      <index name="FK_STRADNIE_PRIEKSNIE_STRADNIE" unique="false" columns="Str_Dab_ID"/>
+    </table>
+  </data-source>
+</component>
